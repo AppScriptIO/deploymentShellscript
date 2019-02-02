@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ex; 
 ## Entrypoints & commands portal/interface
 
 # current file parent directory path:
@@ -30,6 +31,18 @@ container() {
     ./container/entrypoint.sh $@
 }
 
+### Additional examples
+
+test() { # ⭐ Gulp - run bulid tasks
+    set -ex; 
+    node --harmony $currentFileDirectory/entrypoint.js
+}
+
+test.debug() { # ⭐ Gulp - run bulid tasks
+    set -ex; 
+    node --harmony --inspect=0.0.0.0:9229 --debug-brk $currentFileDirectory/entrypoint.js
+}
+
 if [[ $# -eq 0 ]] ; then # if no arguments supplied, fallback to default
     # List function names:
     # compgen -A function 
@@ -51,3 +64,4 @@ else
     # Important: call arguments verbatim. i.e. allows first argument to call functions inside file. So that it could be called as "./setup/entrypoint.sh <functionName>".
     $@ ${@:2} # execute first command as function and pass it 2nd and all following arguments.
 fi
+
