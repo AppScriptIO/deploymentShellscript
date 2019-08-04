@@ -1,0 +1,1 @@
+# All shell files in this repository are deprecated, used for reference only.
