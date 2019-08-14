@@ -1,5 +1,3 @@
-# TODO - remove dev dependencies from package.json.
-
 version=${1:-1.0.0}
 echo "\033[1;32m Releasing version: $version \033[0m"
 
