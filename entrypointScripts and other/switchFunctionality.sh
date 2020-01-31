@@ -64,4 +64,3 @@ else
     # Important: call arguments verbatim. i.e. allows first argument to call functions inside file. So that it could be called as "./setup/entrypoint.sh <functionName>".
     $@ ${@:2} # execute first command as function and pass it 2nd and all following arguments.
 fi
-
